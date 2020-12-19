@@ -5,7 +5,7 @@ from Env.AtariEnv.AtariEnvWrapper import make_atari_env
 
 
 # To allow easily extending to other tasks, we built a wrapper on top of the 'real' environment.
-class EnvWrapper():
+class EnvWrapper:
     def __init__(self, env_name, max_episode_length = 0, enable_record = False, record_path = "1.mp4"):
         self.env_name = env_name
 

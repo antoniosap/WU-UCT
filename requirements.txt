@@ -1,4 +1,14 @@
+# conda config --add channels conda-forge
+# conda config --set channel_priority strict
+# conda create -n MCTS python=3.8.6
+# conda activate MCTS
+# conda install
+pytorch
 scipy
 gym
+pyvirtualdisplay
+pyopengl
+ez_setup
+gym-atari
+folium
 opencv
-pytorch
