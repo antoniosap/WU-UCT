@@ -17,8 +17,8 @@ from Policy.PolicyWrapper import PolicyWrapper
 
 
 class UCT():
-    def __init__(self, env_params, max_steps = 1000, max_depth = 20, max_width = 5,
-                 gamma = 1.0, policy = "Random", seed = 123, device = torch.device("cpu")):
+    def __init__(self, env_params, max_steps=1000, max_depth=20, max_width=5,
+                 gamma=1.0, policy="Random", seed=123, device=torch.device("cpu")):
         self.env_params = env_params
         self.max_steps = max_steps
         self.max_depth = max_depth
@@ -58,7 +58,7 @@ class UCT():
         )
 
     # Entrance of the P-UCT algorithm
-    def simulate_trajectory(self, max_episode_length = -1):
+    def simulate_trajectory(self, max_episode_length=-1):
         state = self.wrapped_env.reset()
         accu_reward = 0.0
         done = False
@@ -87,7 +87,7 @@ class UCT():
         game_end_time = time.time()
         print("> game ended. total reward: {}, used time {} s".format(accu_reward, game_end_time - game_start_time))
 
-        return accu_reward, np.array(rewards, dtype = np.float32), np.array(times, dtype = np.float32)
+        return accu_reward, np.array(rewards, dtype=np.float32), np.array(times, dtype=np.float32)
 
     def simulate_single_move(self, state):
         # Clear cache
@@ -101,12 +101,12 @@ class UCT():
         self.checkpoint_data_manager.checkpoint_env("main", self.global_saving_idx)
 
         self.root_node = UCTnode(
-            action_n = self.action_n,
-            state = state,
-            checkpoint_idx = self.global_saving_idx,
-            parent = None,
-            tree = self,
-            is_head = True
+            action_n=self.action_n,
+            state=state,
+            checkpoint_idx=self.global_saving_idx,
+            parent=None,
+            tree=self,
+            is_head=True
         )
 
         self.global_saving_idx += 1
@@ -128,7 +128,7 @@ class UCT():
         curr_depth = 1
         while True:
             if curr_node.no_child_available() or (not curr_node.all_child_visited() and
-                    curr_node != self.root_node and np.random.random() < 0.5) or \
+                                                  curr_node != self.root_node and np.random.random() < 0.5) or \
                     (not curr_node.all_child_visited() and curr_node == self.root_node):
                 # If no child node has been updated, we have to perform expansion anyway.
                 # Or if root node is not fully visited.
@@ -163,15 +163,15 @@ class UCT():
             curr_node.dones[expand_action] = done
 
             curr_node.update_history(
-                action_taken = expand_action,
-                reward = reward
+                action_taken=expand_action,
+                reward=reward
             )
 
             curr_node.add_child(
                 expand_action,
                 next_state,
                 self.global_saving_idx,
-                prior_prob = self.get_prior_prob(next_state)
+                prior_prob=self.get_prior_prob(next_state)
             )
             self.global_saving_idx += 1
         else:

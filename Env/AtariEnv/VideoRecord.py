@@ -9,8 +9,10 @@ from six import StringIO
 import six
 from gym import error, logger
 
+
 def touch(path):
     open(path, 'a').close()
+
 
 class VideoRecorder():
     """VideoRecorder renders a nice movie of a rollout, frame by frame. It
@@ -76,7 +78,7 @@ class VideoRecorder():
         touch(path)
 
         self.frames_per_sec = env.metadata.get('video.frames_per_second', 30)
-        self.encoder = None # lazily start the process
+        self.encoder = None  # lazily start the process
         self.broken = False
 
         # Dump metadata
@@ -106,7 +108,9 @@ class VideoRecorder():
             else:
                 # Indicates a bug in the environment: don't want to raise
                 # an error here.
-                logger.warn('Env returned None on render(). Disabling further rendering for video recorder by marking as disabled: path=%s metadata_path=%s', self.path, self.metadata_path)
+                logger.warn(
+                    'Env returned None on render(). Disabling further rendering for video recorder by marking as disabled: path=%s metadata_path=%s',
+                    self.path, self.metadata_path)
                 self.broken = True
         else:
             self.last_frame = frame
@@ -200,7 +204,7 @@ class TextEncoder(object):
         self.frames.append(frame_bytes)
 
     def close(self):
-        #frame_duration = float(1) / self.frames_per_sec
+        # frame_duration = float(1) / self.frames_per_sec
         frame_duration = .5
 
         # Turn frames into events: clear screen beforehand
@@ -208,7 +212,7 @@ class TextEncoder(object):
         # https://rosettacode.org/wiki/Terminal_control/Cursor_positioning#Python
         clear_code = six.b("%c[2J\033[1;1H" % (27))
         # Decode the bytes as UTF-8 since JSON may only contain UTF-8
-        events = [ (frame_duration, (clear_code+frame.replace(six.b('\n'),six.b('\r\n'))).decode('utf-8'))  for frame in self.frames ]
+        events = [(frame_duration, (clear_code + frame.replace(six.b('\n'), six.b('\r\n'))).decode('utf-8')) for frame in self.frames]
 
         # Calculate frame size from the largest frames.
         # Add some padding since we'll get cut off otherwise.
@@ -219,10 +223,10 @@ class TextEncoder(object):
             "version": 1,
             "width": width,
             "height": height,
-            "duration": len(self.frames)*frame_duration,
+            "duration": len(self.frames) * frame_duration,
             "command": "-",
             "title": "gym VideoRecorder episode",
-            "env": {}, # could add some env metadata here
+            "env": {},  # could add some env metadata here
             "stdout": events,
         }
 
@@ -231,7 +235,8 @@ class TextEncoder(object):
 
     @property
     def version_info(self):
-        return {'backend':'TextEncoder','version':1}
+        return {'backend': 'TextEncoder', 'version': 1}
+
 
 class ImageEncoder(object):
     def __init__(self, output_path, frame_shape, frames_per_sec):
@@ -240,8 +245,10 @@ class ImageEncoder(object):
         # Frame shape should be lines-first, so w and h are swapped
         h, w, pixfmt = frame_shape
         if pixfmt != 3 and pixfmt != 4:
-            raise error.InvalidFrame("Your frame has shape {}, but we require (w,h,3) or (w,h,4), i.e. RGB values for a w-by-h image, with an optional alpha channl.".format(frame_shape))
-        self.wh = (w,h)
+            raise error.InvalidFrame(
+                "Your frame has shape {}, but we require (w,h,3) or (w,h,4), i.e. RGB values for a w-by-h image, with an optional alpha channl.".format(
+                    frame_shape))
+        self.wh = (w, h)
         self.includes_alpha = (pixfmt == 4)
         self.frame_shape = frame_shape
         self.frames_per_sec = frames_per_sec
@@ -251,40 +258,41 @@ class ImageEncoder(object):
         elif distutils.spawn.find_executable('ffmpeg') is not None:
             self.backend = 'ffmpeg'
         else:
-            raise error.DependencyNotInstalled("""Found neither the ffmpeg nor avconv executables. On OS X, you can install ffmpeg via `brew install ffmpeg`. On most Ubuntu variants, `sudo apt-get install ffmpeg` should do it. On Ubuntu 14.04, however, you'll need to install avconv with `sudo apt-get install libav-tools`.""")
+            raise error.DependencyNotInstalled(
+                """Found neither the ffmpeg nor avconv executables. On OS X, you can install ffmpeg via `brew install ffmpeg`. On most Ubuntu variants, `sudo apt-get install ffmpeg` should do it. On Ubuntu 14.04, however, you'll need to install avconv with `sudo apt-get install libav-tools`.""")
 
         self.start()
 
     @property
     def version_info(self):
         return {
-            'backend':self.backend,
-            'version':str(subprocess.check_output([self.backend, '-version'],
-                                                  stderr=subprocess.STDOUT)),
-            'cmdline':self.cmdline
+            'backend': self.backend,
+            'version': str(subprocess.check_output([self.backend, '-version'],
+                                                   stderr=subprocess.STDOUT)),
+            'cmdline': self.cmdline
         }
 
     def start(self):
         self.cmdline = (self.backend,
-                     '-nostats',
-                     '-loglevel', 'error', # suppress warnings
-                     '-y',
-                     '-r', '%d' % self.frames_per_sec,
+                        '-nostats',
+                        '-loglevel', 'error',  # suppress warnings
+                        '-y',
+                        '-r', '%d' % self.frames_per_sec,
 
-                     # input
-                     '-f', 'rawvideo',
-                     '-s:v', '{}x{}'.format(*self.wh),
-                     '-pix_fmt',('rgb32' if self.includes_alpha else 'rgb24'),
-                     '-i', '-', # this used to be /dev/stdin, which is not Windows-friendly
+                        # input
+                        '-f', 'rawvideo',
+                        '-s:v', '{}x{}'.format(*self.wh),
+                        '-pix_fmt', ('rgb32' if self.includes_alpha else 'rgb24'),
+                        '-i', '-',  # this used to be /dev/stdin, which is not Windows-friendly
 
-                     # output
-                     '-vcodec', 'libx264',
-                     '-pix_fmt', 'yuv420p',
-                     self.output_path
-                     )
+                        # output
+                        '-vcodec', 'libx264',
+                        '-pix_fmt', 'yuv420p',
+                        self.output_path
+                        )
 
         logger.debug('Starting ffmpeg with "%s"', ' '.join(self.cmdline))
-        if hasattr(os,'setsid'): #setsid not present on Windows
+        if hasattr(os, 'setsid'):  # setsid not present on Windows
             self.proc = subprocess.Popen(self.cmdline, stdin=subprocess.PIPE, preexec_fn=os.setsid)
         else:
             self.proc = subprocess.Popen(self.cmdline, stdin=subprocess.PIPE)
@@ -293,7 +301,8 @@ class ImageEncoder(object):
         if not isinstance(frame, (np.ndarray, np.generic)):
             raise error.InvalidFrame('Wrong type {} for {} (must be np.ndarray or np.generic)'.format(type(frame), frame))
         if frame.shape != self.frame_shape:
-            raise error.InvalidFrame("Your frame has shape {}, but the VideoRecorder is configured for shape {}.".format(frame.shape, self.frame_shape))
+            raise error.InvalidFrame(
+                "Your frame has shape {}, but the VideoRecorder is configured for shape {}.".format(frame.shape, self.frame_shape))
         if frame.dtype != np.uint8:
             raise error.InvalidFrame("Your frame has data type {}, but we require uint8 (i.e. RGB values from 0-255).".format(frame.dtype))
 

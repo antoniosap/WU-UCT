@@ -5,6 +5,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as Fnn
 import matplotlib
+
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from torch.autograd import Variable
@@ -18,7 +19,7 @@ class PPO:
                  worker_steps=128, sequence_steps=32, minibatch_steps=256,
                  opt_epochs=3, value_coef=1., entropy_coef=.01, max_grad_norm=.5,
                  cuda=False, plot_reward=False, plot_points=20, plot_path='ep_reward.png',
-                 test_repeat_max=100, env_name = ""):
+                 test_repeat_max=100, env_name=""):
         """ Proximal Policy Optimization algorithm class
 
         Evaluates a policy over a vectorized environment and
@@ -43,7 +44,7 @@ class PPO:
         self.venv = venv
         self.test_env = test_env
         self.optimizer = optimizer
-        
+
         self.env_name = env_name
 
         self.lr_func = lr_func

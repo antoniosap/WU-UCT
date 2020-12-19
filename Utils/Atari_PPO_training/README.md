@@ -1,4 +1,5 @@
 # PPO
+
 PyTorch implementation of Proximal Policy Optimization
 
 ![live agents](assets/agents.gif)
@@ -6,6 +7,7 @@ PyTorch implementation of Proximal Policy Optimization
 ## Usage
 
 Example command line usage:
+
 ````
 python main.py BreakoutNoFrameskip-v0 --num-workers 8 --render
 ````
@@ -14,7 +16,8 @@ This will run PPO with 8 parallel training environments, which will be rendered 
 
 ## Performance
 
-Results are comparable to those of the original PPO paper. The horizontal axis here is labeled by environment steps, whereas the graphs in the paper label it with frames, with 4 frames per step.
+Results are comparable to those of the original PPO paper. The horizontal axis here is labeled by environment steps, whereas the graphs in the paper
+label it with frames, with 4 frames per step.
 
 Training episode reward versus environment steps for `BreakoutNoFrameskip-v3`:
 

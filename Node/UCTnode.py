@@ -8,7 +8,7 @@ from Utils.MovingAvegCalculator import MovingAvegCalculator
 
 class UCTnode():
     def __init__(self, action_n, state, checkpoint_idx, parent, tree,
-                 prior_prob = None, is_head = False, allowed_actions = None):
+                 prior_prob=None, is_head=False, allowed_actions=None):
         self.action_n = action_n
         self.state = state
         self.checkpoint_idx = checkpoint_idx
@@ -32,7 +32,7 @@ class UCTnode():
         if prior_prob is not None:
             self.prior_prob = prior_prob
         else:
-            self.prior_prob = np.ones([self.action_n], dtype = np.float32) / self.action_n
+            self.prior_prob = np.ones([self.action_n], dtype=np.float32) / self.action_n
 
         # Record traverse history
         self.traverse_history = list()
@@ -41,7 +41,7 @@ class UCTnode():
         self.updated_node_count = 0
 
         # Moving average calculator
-        self.moving_aveg_calculator = MovingAvegCalculator(window_length = 500)
+        self.moving_aveg_calculator = MovingAvegCalculator(window_length=500)
 
     def no_child_available(self):
         # All child nodes have not been expanded.
@@ -145,12 +145,12 @@ class UCTnode():
             node = self.children[action]
         else:
             node = UCTnode(
-                action_n = self.action_n,
-                state = child_state,
-                checkpoint_idx = checkpoint_idx,
-                parent = self,
-                tree = self.tree,
-                prior_prob = prior_prob
+                action_n=self.action_n,
+                state=child_state,
+                checkpoint_idx=checkpoint_idx,
+                parent=self,
+                tree=self.tree,
+                prior_prob=prior_prob
             )
 
             self.children[action] = node

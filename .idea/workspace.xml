@@ -2,11 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d14602db-62e3-4c4b-95c8-aad4610ade93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/main_2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CODE_OF_CONDUCT.md" beforeDir="false" afterPath="$PROJECT_DIR$/CODE_OF_CONDUCT.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Env/AtariEnv/AtariEnvWrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/AtariEnv/AtariEnvWrapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Env/AtariEnv/VideoRecord.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/AtariEnv/VideoRecord.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Env/AtariEnv/atari_wrappers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/AtariEnv/atari_wrappers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Env/AtariEnv/subproc_vec_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/AtariEnv/subproc_vec_env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Env/AtariEnv/vec_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/AtariEnv/vec_env.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Env/EnvWrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/EnvWrapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Node/UCTnode.py" beforeDir="false" afterPath="$PROJECT_DIR$/Node/UCTnode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Node/WU_UCTnode.py" beforeDir="false" afterPath="$PROJECT_DIR$/Node/WU_UCTnode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelPool/PoolManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelPool/PoolManager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelPool/Worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelPool/Worker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Policy/PPO/PPOPolicy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Policy/PPO/PPOPolicy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Policy/PolicyWrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Policy/PolicyWrapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TODO" beforeDir="false" afterPath="$PROJECT_DIR$/TODO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/UCT.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/UCT.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tree/WU_UCT.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/WU_UCT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Atari_PPO_training/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Atari_PPO_training/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Atari_PPO_training/atari_wrappers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Atari_PPO_training/atari_wrappers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Atari_PPO_training/envs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Atari_PPO_training/envs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Atari_PPO_training/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Atari_PPO_training/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Atari_PPO_training/ppo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Atari_PPO_training/ppo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Atari_PPO_training/subproc_vec_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Atari_PPO_training/subproc_vec_env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Atari_PPO_training/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Atari_PPO_training/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Atari_PPO_training/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Atari_PPO_training/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/Atari_PPO_training/vec_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Atari_PPO_training/vec_env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/NetworkDistillation/Distillation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/NetworkDistillation/Distillation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/NetworkDistillation/ReplayBuffer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/NetworkDistillation/ReplayBuffer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608232164476</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Refactor prior policy module to support easy reuse :)">
+      <created>1608371516134</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608371516134</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

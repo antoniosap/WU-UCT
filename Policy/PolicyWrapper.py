@@ -25,8 +25,8 @@ class PolicyWrapper():
 
             self.policy_func = PPOAtariCNN(
                 self.action_n,
-                device = self.device,
-                checkpoint_dir = "./Policy/PPO/PolicyFiles/PPO_" + self.env_name + ".pt"
+                device=self.device,
+                checkpoint_dir="./Policy/PPO/PolicyFiles/PPO_" + self.env_name + ".pt"
             )
 
         elif self.policy_name == "DistillPPO":
@@ -35,14 +35,14 @@ class PolicyWrapper():
 
             full_policy = PPOAtariCNN(
                 self.action_n,
-                device = "cpu", # To save memory
-                checkpoint_dir = "./Policy/PPO/PolicyFiles/PPO_" + self.env_name + ".pt"
+                device="cpu",  # To save memory
+                checkpoint_dir="./Policy/PPO/PolicyFiles/PPO_" + self.env_name + ".pt"
             )
 
             small_policy = PPOSmallAtariCNN(
                 self.action_n,
-                device = self.device,
-                checkpoint_dir = "./Policy/PPO/PolicyFiles/SmallPPO_" + self.env_name + ".pt"
+                device=self.device,
+                checkpoint_dir="./Policy/PPO/PolicyFiles/SmallPPO_" + self.env_name + ".pt"
             )
 
             self.policy_func = [full_policy, small_policy]
@@ -71,7 +71,7 @@ class PolicyWrapper():
 
     def get_prior_prob(self, state):
         if self.policy_name == "Random":
-            return np.ones([self.action_n], dtype = np.float32) / self.action_n
+            return np.ones([self.action_n], dtype=np.float32) / self.action_n
         elif self.policy_name == "PPO":
             return self.policy_func.get_action(state)
         elif self.policy_name == "DistillPPO":

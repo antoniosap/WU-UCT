@@ -58,7 +58,7 @@ def atari_initializer(module):
 
 
 class PPOAtariCNN():
-    def __init__(self, num_actions, device = "cpu", checkpoint_dir = ""):
+    def __init__(self, num_actions, device="cpu", checkpoint_dir=""):
         self.num_actions = num_actions
         self.device = torch.device(device)
         self.checkpoint_dir = checkpoint_dir
@@ -66,20 +66,20 @@ class PPOAtariCNN():
         self.model = AtariCNN(num_actions, self.device)
 
         if checkpoint_dir != "" and os.path.exists(checkpoint_dir):
-            checkpoint = torch.load(checkpoint_dir, map_location = "cpu")
+            checkpoint = torch.load(checkpoint_dir, map_location="cpu")
             self.model.load_state_dict(checkpoint["policy"])
 
         self.model.to(device)
 
-    def get_action(self, state, logit = False):
-        return self.model.get_action(state, logit = logit)
+    def get_action(self, state, logit=False):
+        return self.model.get_action(state, logit=logit)
 
     def get_value(self, state):
         return self.model.get_value(state)
 
 
 class PPOSmallAtariCNN():
-    def __init__(self, num_actions, device = "cpu", checkpoint_dir = ""):
+    def __init__(self, num_actions, device="cpu", checkpoint_dir=""):
         self.num_actions = num_actions
         self.device = torch.device(device)
         self.checkpoint_dir = checkpoint_dir
@@ -87,12 +87,12 @@ class PPOSmallAtariCNN():
         self.model = SmallPolicyAtariCNN(num_actions, self.device)
 
         if checkpoint_dir != "" and os.path.exists(checkpoint_dir):
-            checkpoint = torch.load(checkpoint_dir, map_location = "cpu")
+            checkpoint = torch.load(checkpoint_dir, map_location="cpu")
             # self.model.load_state_dict(checkpoint["policy"])
 
         self.model.to(device)
 
-        self.optimizer = optim.Adam(self.model.parameters(), lr = 1e-3)
+        self.optimizer = optim.Adam(self.model.parameters(), lr=1e-3)
 
         self.mseLoss = nn.MSELoss()
 
@@ -103,7 +103,7 @@ class PPOSmallAtariCNN():
         # raise RuntimeError("Small policy net does not support value evaluation.")
         return self.model.get_value(state)
 
-    def train_step(self, state_batch, policy_batch, value_batch, temperature = 2.5):
+    def train_step(self, state_batch, policy_batch, value_batch, temperature=2.5):
         self.optimizer.zero_grad()
 
         # policy_batch = F.softmax(policy_batch / temperature, dim = 1)
@@ -172,7 +172,7 @@ class AtariCNN(nn.Module):
 
         return pi_out, v_out
 
-    def get_action(self, conv_in, logit = False):
+    def get_action(self, conv_in, logit=False):
         if isinstance(conv_in, LazyFrames):
             conv_in = torch.from_numpy(np.array(conv_in)).type(torch.float32).to(self.device).unsqueeze(0)
         elif isinstance(conv_in, np.ndarray):
@@ -187,7 +187,7 @@ class AtariCNN(nn.Module):
         if logit:
             pi_out = self.pi(fc_out)
         else:
-            pi_out = F.softmax(self.pi(fc_out), dim = 1)
+            pi_out = F.softmax(self.pi(fc_out), dim=1)
 
         if N == 1:
             pi_out = pi_out.view(-1)
@@ -226,13 +226,13 @@ class SmallPolicyAtariCNN(nn.Module):
         """
         super().__init__()
 
-        self.conv = nn.Sequential(nn.Conv2d(4, 16, 3, stride = 4),
-                                  nn.ReLU(inplace = True),
-                                  nn.Conv2d(16, 16, 3, stride = 4),
-                                  nn.ReLU(inplace = True))
+        self.conv = nn.Sequential(nn.Conv2d(4, 16, 3, stride=4),
+                                  nn.ReLU(inplace=True),
+                                  nn.Conv2d(16, 16, 3, stride=4),
+                                  nn.ReLU(inplace=True))
 
         self.fc = nn.Sequential(nn.Linear(16 * 5 * 5, 64),
-                                nn.ReLU(inplace = True))
+                                nn.ReLU(inplace=True))
 
         self.pi = nn.Linear(64, num_actions)
         self.v = nn.Linear(64, 1)
@@ -262,7 +262,7 @@ class SmallPolicyAtariCNN(nn.Module):
 
         return pi_out, v_out
 
-    def get_action(self, conv_in, logit = False, get_tensor = False):
+    def get_action(self, conv_in, logit=False, get_tensor=False):
         if isinstance(conv_in, LazyFrames):
             conv_in = torch.from_numpy(np.array(conv_in)).type(torch.float32).to(self.device).unsqueeze(0)
         elif isinstance(conv_in, np.ndarray):
@@ -278,7 +278,7 @@ class SmallPolicyAtariCNN(nn.Module):
         if logit:
             pi_out = self.pi(fc_out)
         else:
-            pi_out = F.softmax(self.pi(fc_out), dim = 1)
+            pi_out = F.softmax(self.pi(fc_out), dim=1)
         cc = time.time()
         if N == 1:
             pi_out = pi_out.view(-1)

@@ -13,10 +13,10 @@ from ParallelPool.PoolManager import PoolManager
 from Mem.CheckpointManager import CheckpointManager
 
 
-class WU_UCT():
-    def __init__(self, env_params, max_steps = 1000, max_depth = 20, max_width = 5,
-                 gamma = 1.0, expansion_worker_num = 16, simulation_worker_num = 16,
-                 policy = "Random", seed = 123, device = "cpu", record_video = False):
+class WU_UCT:
+    def __init__(self, env_params, max_steps=1000, max_depth=20, max_width=5,
+                 gamma=1.0, expansion_worker_num=16, simulation_worker_num=16,
+                 policy="Random", seed=123, device="cpu", record_video=False):
         self.env_params = env_params
         self.max_steps = max_steps
         self.max_depth = max_depth
@@ -30,8 +30,8 @@ class WU_UCT():
 
         # Environment
         record_path = "Records/P-UCT_" + env_params["env_name"] + ".mp4"
-        self.wrapped_env = EnvWrapper(**env_params, enable_record = record_video,
-                                      record_path = record_path)
+        self.wrapped_env = EnvWrapper(**env_params, enable_record=record_video,
+                                      record_path=record_path)
 
         # Environment properties
         self.action_n = self.wrapped_env.get_action_n()
@@ -41,24 +41,24 @@ class WU_UCT():
 
         # Expansion worker pool
         self.expansion_worker_pool = PoolManager(
-            worker_num = expansion_worker_num,
-            env_params = env_params,
-            policy = policy,
-            gamma = gamma,
-            seed = seed,
-            device = device,
-            need_policy = False
+            worker_num=expansion_worker_num,
+            env_params=env_params,
+            policy=policy,
+            gamma=gamma,
+            seed=seed,
+            device=device,
+            need_policy=False
         )
 
         # Simulation worker pool
         self.simulation_worker_pool = PoolManager(
-            worker_num = simulation_worker_num,
-            env_params = env_params,
-            policy = policy,
-            gamma = gamma,
-            seed = seed,
-            device = device,
-            need_policy = True
+            worker_num=simulation_worker_num,
+            env_params=env_params,
+            policy=policy,
+            gamma=gamma,
+            seed=seed,
+            device=device,
+            need_policy=True
         )
 
         # Checkpoint data manager
@@ -79,13 +79,13 @@ class WU_UCT():
         self.simulation_count = 0
 
         # Logging
-        logging.basicConfig(filename = "Logs/P-UCT_" + self.env_params["env_name"] + "_" +
-                                       str(self.simulation_worker_num) + ".log", level = logging.INFO)
+        logging.basicConfig(filename="Logs/P-UCT_" + self.env_params["env_name"] + "_" +
+                                     str(self.simulation_worker_num) + ".log", level=logging.INFO)
 
     # Entrance of the P-UCT algorithm
     # This is the outer loop of P-UCT simulation, where the P-UCT agent consecutively plan a best action and
     # interact with the environment.
-    def simulate_trajectory(self, max_episode_length = -1):
+    def simulate_trajectory(self, max_episode_length=-1):
         state = self.wrapped_env.reset()
         accu_reward = 0.0
         done = False
@@ -128,7 +128,7 @@ class WU_UCT():
         print(msg)
         logging.info(msg)
 
-        return accu_reward, np.array(rewards, dtype = np.float32), np.array(times, dtype = np.float32)
+        return accu_reward, np.array(rewards, dtype=np.float32), np.array(times, dtype=np.float32)
 
     # This is the planning process of P-UCT. Starts from a tree with a root node only,
     # P-UCT performs selection, expansion, simulation, and backpropagation on it.
@@ -153,12 +153,12 @@ class WU_UCT():
         # Construct root node
         self.checkpoint_data_manager.checkpoint_env("main", self.global_saving_idx)
         self.root_node = WU_UCTnode(
-            action_n = self.action_n,
-            state = state,
-            checkpoint_idx = self.global_saving_idx,
-            parent = None,
-            tree = self,
-            is_head = True
+            action_n=self.action_n,
+            state=state,
+            checkpoint_idx=self.global_saving_idx,
+            parent=None,
+            tree=self,
+            is_head=True
         )
 
         # An index used to retrieve game-states
@@ -190,7 +190,7 @@ class WU_UCT():
         curr_depth = 1
         while True:
             if curr_node.no_child_available() or (not curr_node.all_child_visited() and
-                    curr_node != self.root_node and np.random.random() < 0.5) or \
+                                                  curr_node != self.root_node and np.random.random() < 0.5) or \
                     (not curr_node.all_child_visited() and curr_node == self.root_node):
                 # If no child node has been updated, we have to perform expansion anyway.
                 # Or if root node is not fully visited.
@@ -307,18 +307,18 @@ class WU_UCT():
             checkpoint_data = self.checkpoint_data_manager.retrieve(self.simulation_task_recorder[task_idx][2])
 
             first_aciton = None if self.simulation_task_recorder[task_idx][3] \
-                is not None else self.simulation_task_recorder[task_idx][0]
+                                   is not None else self.simulation_task_recorder[task_idx][0]
 
             # Assign the task to server
             self.simulation_worker_pool.assign_simulation_task(
                 task_idx,
                 checkpoint_data,
-                first_action = first_aciton
+                first_action=first_aciton
             )
 
             # Perform incomplete update
             self.incomplete_update(
-                self.simulation_task_recorder[task_idx][1], # This is the corresponding node
+                self.simulation_task_recorder[task_idx][1],  # This is the corresponding node
                 self.root_node,
                 task_idx
             )
@@ -342,7 +342,7 @@ class WU_UCT():
                     expand_action,
                     next_state,
                     saving_idx,
-                    prior_prob = prior_prob
+                    prior_prob=prior_prob
                 )
 
             # Complete Update

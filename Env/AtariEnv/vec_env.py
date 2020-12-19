@@ -2,6 +2,7 @@ import contextlib
 import os
 from abc import ABC, abstractmethod
 
+
 def tile_images(img_nhwc):
     """
         Tile N images into one big PxQ image
@@ -16,12 +17,13 @@ def tile_images(img_nhwc):
     img_nhwc = np.asarray(img_nhwc)
     N, h, w, c = img_nhwc.shape
     H = int(np.ceil(np.sqrt(N)))
-    W = int(np.ceil(float(N)/H))
-    img_nhwc = np.array(list(img_nhwc) + [img_nhwc[0]*0 for _ in range(N, H*W)])
+    W = int(np.ceil(float(N) / H))
+    img_nhwc = np.array(list(img_nhwc) + [img_nhwc[0] * 0 for _ in range(N, H * W)])
     img_HWhwc = img_nhwc.reshape(H, W, h, w, c)
     img_HhWwc = img_HWhwc.transpose(0, 2, 1, 3, 4)
-    img_Hh_Ww_c = img_HhWwc.reshape(H*h, W*w, c)
+    img_Hh_Ww_c = img_HhWwc.reshape(H * h, W * w, c)
     return img_Hh_Ww_c
+
 
 class AlreadySteppingError(Exception):
     """
@@ -156,6 +158,7 @@ class VecEnv(ABC):
             self.viewer = rendering.SimpleImageViewer()
         return self.viewer
 
+
 class VecEnvWrapper(VecEnv):
     """
     An environment wrapper that applies to an entire batch
@@ -165,8 +168,8 @@ class VecEnvWrapper(VecEnv):
     def __init__(self, venv, observation_space=None, action_space=None):
         self.venv = venv
         super().__init__(num_envs=venv.num_envs,
-                        observation_space=observation_space or venv.observation_space,
-                        action_space=action_space or venv.action_space)
+                         observation_space=observation_space or venv.observation_space,
+                         action_space=action_space or venv.action_space)
 
     def step_async(self, actions):
         self.venv.step_async(actions)
@@ -193,6 +196,7 @@ class VecEnvWrapper(VecEnv):
             raise AttributeError("attempted to get missing private attribute '{}'".format(name))
         return getattr(self.venv, name)
 
+
 class VecEnvObservationWrapper(VecEnvWrapper):
     @abstractmethod
     def process(self, obs):
@@ -205,6 +209,7 @@ class VecEnvObservationWrapper(VecEnvWrapper):
     def step_wait(self):
         obs, rews, dones, infos = self.venv.step_wait()
         return self.process(obs), rews, dones, infos
+
 
 class CloudpickleWrapper(object):
     """

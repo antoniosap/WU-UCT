@@ -8,8 +8,8 @@ from ParallelPool.Worker import Worker
 
 # Works in the main process and manages sub-workers
 class PoolManager():
-    def __init__(self, worker_num, env_params, policy = "Random",
-                 gamma = 1.0, seed = 123, device = "cpu", need_policy = True):
+    def __init__(self, worker_num, env_params, policy="Random",
+                 gamma=1.0, seed=123, device="cpu", need_policy=True):
         self.worker_num = worker_num
         self.env_params = env_params
         self.policy = policy
@@ -34,14 +34,14 @@ class PoolManager():
             self.pipes.append(parent_pipe)
 
             worker = Worker(
-                pipe = child_pipe,
-                env_params = deepcopy(env_params),
-                policy = policy,
-                gamma = gamma,
-                seed = seed + worker_idx,
-                device = device + ":" + str(int(torch_device_num * worker_idx / worker_num))
-                    if device == "cuda" else device,
-                need_policy = need_policy
+                pipe=child_pipe,
+                env_params=deepcopy(env_params),
+                policy=policy,
+                gamma=gamma,
+                seed=seed + worker_idx,
+                device=device + ":" + str(int(torch_device_num * worker_idx / worker_num))
+                if device == "cuda" else device,
+                need_policy=need_policy
             )
             self.workers.append(worker)
 
@@ -88,7 +88,7 @@ class PoolManager():
 
         self.worker_status[worker_idx] = 1
 
-    def assign_simulation_task(self, task_idx, checkpoint_data, first_action = None):
+    def assign_simulation_task(self, task_idx, checkpoint_data, first_action=None):
         worker_idx = self.find_idle_worker()
 
         self.send_safe_protocol(worker_idx, "Simulation", (

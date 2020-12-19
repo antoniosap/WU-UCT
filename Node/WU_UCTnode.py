@@ -7,7 +7,7 @@ from Utils.MovingAvegCalculator import MovingAvegCalculator
 
 class WU_UCTnode():
     def __init__(self, action_n, state, checkpoint_idx, parent, tree,
-                 prior_prob = None, is_head = False):
+                 prior_prob=None, is_head=False):
         self.action_n = action_n
         self.state = state
         self.checkpoint_idx = checkpoint_idx
@@ -43,7 +43,7 @@ class WU_UCTnode():
         self.updated_node_count = 0
 
         # Moving average calculator
-        self.moving_aveg_calculator = MovingAvegCalculator(window_length = 500)
+        self.moving_aveg_calculator = MovingAvegCalculator(window_length=500)
 
     def no_child_available(self):
         # All child nodes have not been expanded.
@@ -66,13 +66,13 @@ class WU_UCTnode():
     # Shallowly clone itself, contains necessary data only.
     def shallow_clone(self):
         node = WU_UCTnode(
-            action_n = self.action_n,
-            state = deepcopy(self.state),
-            checkpoint_idx = self.checkpoint_idx,
-            parent = None,
-            tree = None,
-            prior_prob = None,
-            is_head = False
+            action_n=self.action_n,
+            state=deepcopy(self.state),
+            checkpoint_idx=self.checkpoint_idx,
+            parent=None,
+            tree=None,
+            prior_prob=None,
+            is_head=False
         )
 
         for action in range(self.action_n):
@@ -191,17 +191,17 @@ class WU_UCTnode():
         return accu_reward
 
     # Add a child to current node.
-    def add_child(self, action, child_state, checkpoint_idx, prior_prob = None):
+    def add_child(self, action, child_state, checkpoint_idx, prior_prob=None):
         if self.children[action] is not None:
             node = self.children[action]
         else:
             node = WU_UCTnode(
-                action_n = self.action_n,
-                state = child_state,
-                checkpoint_idx = checkpoint_idx,
-                parent = self,
-                tree = self.tree,
-                prior_prob = prior_prob
+                action_n=self.action_n,
+                state=child_state,
+                checkpoint_idx=checkpoint_idx,
+                parent=self,
+                tree=self.tree,
+                prior_prob=prior_prob
             )
 
             self.children[action] = node

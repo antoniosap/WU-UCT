@@ -1,4 +1,4 @@
 #
 #
 #
-python --model WU-UCT --env-name PongNoFrameskip-v0 --record-video --device cuda
+python main.py --model WU-UCT --env-name PongNoFrameskip-v0 --record-video --device cuda

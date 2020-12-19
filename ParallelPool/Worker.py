@@ -12,8 +12,8 @@ from Policy.PolicyWrapper import PolicyWrapper
 
 # Slave workers
 class Worker(Process):
-    def __init__(self, pipe, env_params, policy = "Random", gamma = 1.0, seed = 123,
-                 device = "cpu", need_policy = True):
+    def __init__(self, pipe, env_params, policy="Random", gamma=1.0, seed=123,
+                 device="cpu", need_policy=True):
         super(Worker, self).__init__()
 
         self.pipe = pipe
@@ -65,7 +65,7 @@ class Worker(Process):
 
                 # Select expand action, and do expansion
                 expand_action, next_state, reward, done, \
-                    checkpoint_data = self.expand_node(checkpoint_data, curr_node)
+                checkpoint_data = self.expand_node(checkpoint_data, curr_node)
 
                 item = (expand_action, next_state, reward, done, checkpoint_data,
                         saving_idx, task_idx)
@@ -115,7 +115,7 @@ class Worker(Process):
 
         return expand_action, next_state, reward, done, checkpoint_data
 
-    def simulate(self, state, max_simulation_step = 100, lamda = 0.5):
+    def simulate(self, state, max_simulation_step=100, lamda=0.5):
         step_count = 0
         accu_reward = 0.0
         accu_gamma = 1.0

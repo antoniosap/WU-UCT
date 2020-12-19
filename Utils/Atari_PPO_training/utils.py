@@ -2,13 +2,16 @@ import random
 import numpy as np
 import torch
 
+
 def set_seed(seed):
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
 
+
 def cuda_if(torch_object, cuda):
     return torch_object.cuda() if cuda else torch_object
+
 
 def gae(rewards, masks, values, gamma, lambd):
     """ Generalized Advantage Estimation
@@ -68,6 +71,7 @@ def mean_std_groups(x, y, group_size):
         y_stds = np.concatenate([y_stds, y_tail.std(axis=0, keepdims=True)])
 
     return x_means, x_stds, y_means, y_stds
+
 
 def set_lr(optimizer, lr):
     for param_group in optimizer.param_groups:

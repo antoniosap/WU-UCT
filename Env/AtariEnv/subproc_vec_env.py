@@ -38,6 +38,7 @@ class SubprocVecEnv(VecEnv):
     VecEnv that runs multiple environments in parallel in subproceses and communicates with them via pipes.
     Recommended to use when num_envs > 1 and step() can be a bottleneck.
     """
+
     def __init__(self, env_fns, spaces=None, context='spawn'):
         """
         Arguments:
@@ -105,6 +106,7 @@ class SubprocVecEnv(VecEnv):
     def __del__(self):
         if not self.closed:
             self.close()
+
 
 def _flatten_obs(obs):
     assert isinstance(obs, (list, tuple))

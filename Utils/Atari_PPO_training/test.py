@@ -13,7 +13,7 @@ from utils import set_seed, cuda_if
 
 if __name__ == "__main__":
     multiprocessing.set_start_method("forkserver")
-    
+
     parser = argparse.ArgumentParser(description='PPO', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('env_id', type=str, help='Gym environment id')
     parser.add_argument('--arch', type=str, default='cnn', help='policy architecture, {lstm, cnn}')
@@ -52,22 +52,22 @@ if __name__ == "__main__":
     checkpoint = torch.load("./save/PPO_" + self.env_name + ".pt")
     policy.load_check_point(checkpoint["policy"])
     policy = cuda_if(policy, cuda)
-    
+
     ob = self.test_env.reset()
     done = False
     ep_reward = 0
     last_action = np.array([-1])
     action_repeat = 0
-        
+
     while not done:
         ob = np.array(ob)
         ob = torch.from_numpy(ob.transpose((2, 0, 1))).float().unsqueeze(0)
         ob = Variable(ob / 255., volatile=True)
         ob = cuda_if(ob, self.cuda)
-            
+
         pi, v = policy(ob)
         _, action = torch.max(pi, dim=1)
-            
+
         # abort after {self.test_repeat_max} discrete action repeats
         if action.data[0] == last_action.data[0]:
             action_repeat += 1
@@ -76,9 +76,9 @@ if __name__ == "__main__":
         else:
             action_repeat = 0
         last_action = action
-            
+
         ob, reward, done, _ = self.test_env.step(action.data.cpu().numpy())
-    
+
         ep_reward += reward
 
     print(ep_reward)

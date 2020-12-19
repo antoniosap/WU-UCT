@@ -13,7 +13,7 @@ from utils import set_seed, cuda_if
 
 if __name__ == "__main__":
     multiprocessing.set_start_method("forkserver")
-    
+
     parser = argparse.ArgumentParser(description='PPO', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('env_id', type=str, help='Gym environment id')
     parser.add_argument('--arch', type=str, default='cnn', help='policy architecture, {lstm, cnn}')
@@ -79,5 +79,5 @@ if __name__ == "__main__":
                     value_coef=args.value_coef, entropy_coef=args.entropy_coef,
                     max_grad_norm=args.max_grad_norm,
                     cuda=cuda,
-                    plot_reward=args.plot_reward, plot_points=args.plot_points, plot_path=args.plot_path, env_name = args.env_id)
+                    plot_reward=args.plot_reward, plot_points=args.plot_points, plot_path=args.plot_path, env_name=args.env_id)
     algorithm.run(args.total_steps)
