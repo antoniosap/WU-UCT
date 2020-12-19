@@ -124,7 +124,7 @@ class WU_UCT:
             step_count += 1
 
         game_end_time = time.process_time()
-        msg = "> game ended. total reward: {}, used time {} s".format(accu_reward, game_end_time - game_start_time)
+        msg = "> game ended. total reward: {}, used time {:8.3f} s".format(accu_reward, game_end_time - game_start_time)
         print(msg)
         logging.info(msg)
 

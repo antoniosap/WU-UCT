@@ -83,6 +83,12 @@ class RenderSubprocVecEnv(VecEnv):
         self.render_interval = render_interval
         self.render_timer = 0
 
+    def step_async(self, actions):
+        return
+
+    def step_wait(self):
+        return
+
     def step(self, actions):
         for remote, action in zip(self.remotes, actions):
             remote.send(('step', action))

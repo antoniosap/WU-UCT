@@ -12,3 +12,6 @@ ez_setup
 gym-atari
 folium
 opencv
+matplotlib
+# per i puzzle pip
+rubiks-cube-gym

@@ -2,36 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d14602db-62e3-4c4b-95c8-aad4610ade93" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/show_rubik_env.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CODE_OF_CONDUCT.md" beforeDir="false" afterPath="$PROJECT_DIR$/CODE_OF_CONDUCT.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Env/AtariEnv/AtariEnvWrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/AtariEnv/AtariEnvWrapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Env/AtariEnv/VideoRecord.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/AtariEnv/VideoRecord.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Env/AtariEnv/atari_wrappers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/AtariEnv/atari_wrappers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Env/AtariEnv/subproc_vec_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/AtariEnv/subproc_vec_env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Env/AtariEnv/vec_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/AtariEnv/vec_env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Env/EnvWrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/EnvWrapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Node/UCTnode.py" beforeDir="false" afterPath="$PROJECT_DIR$/Node/UCTnode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Node/WU_UCTnode.py" beforeDir="false" afterPath="$PROJECT_DIR$/Node/WU_UCTnode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ParallelPool/PoolManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelPool/PoolManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ParallelPool/Worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelPool/Worker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Policy/PPO/PPOPolicy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Policy/PPO/PPOPolicy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Policy/PolicyWrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Policy/PolicyWrapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO" beforeDir="false" afterPath="$PROJECT_DIR$/TODO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/UCT.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/UCT.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tree/WU_UCT.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/WU_UCT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Atari_PPO_training/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Atari_PPO_training/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Atari_PPO_training/atari_wrappers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Atari_PPO_training/atari_wrappers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Atari_PPO_training/envs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Atari_PPO_training/envs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Atari_PPO_training/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Atari_PPO_training/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Atari_PPO_training/ppo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Atari_PPO_training/ppo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Atari_PPO_training/subproc_vec_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Atari_PPO_training/subproc_vec_env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Atari_PPO_training/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Atari_PPO_training/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Atari_PPO_training/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Atari_PPO_training/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/Atari_PPO_training/vec_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/Atari_PPO_training/vec_env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/NetworkDistillation/Distillation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/NetworkDistillation/Distillation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/NetworkDistillation/ReplayBuffer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/NetworkDistillation/ReplayBuffer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +39,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Utils/NetworkDistillation/Distillation.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/show_env.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -73,8 +49,8 @@
       <recent name="$PROJECT_DIR$/Utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main pong">
-    <configuration name="Distillation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.show rubik env">
+    <configuration name="Distillation" type="PythonConfigurationType" factoryName="Python">
       <module name="P-MCTS" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -88,6 +64,27 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Utils/NetworkDistillation/Distillation.py" />
       <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main atari" type="PythonConfigurationType" factoryName="Python">
+      <module name="P-MCTS" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/.miniconda3/envs/MCTS/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Utils/Atari_PPO_training" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Utils/Atari_PPO_training/main.py" />
+      <option name="PARAMETERS" value="BreakoutNoFrameskip-v0 --num-workers 8" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -116,15 +113,55 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main rubik 2x2" type="PythonConfigurationType" factoryName="Python">
+      <module name="P-MCTS" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/.miniconda3/envs/MCTS/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="--model WU-UCT --env-name rubiks-cube-222-v0 --record-video --device cuda" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="show rubik env" type="PythonConfigurationType" factoryName="Python">
+      <module name="P-MCTS" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/.miniconda3/envs/MCTS/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/show_rubik_env.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.main pong" />
+      <item itemvalue="Python.main rubik 2x2" />
+      <item itemvalue="Python.show rubik env" />
+      <item itemvalue="Python.main atari" />
       <item itemvalue="Python.Distillation" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.Distillation" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -166,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608371516134</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Refactor">
+      <created>1608375615357</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608375615357</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -183,9 +227,41 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refactor prior policy module to support easy reuse :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor prior policy module to support easy reuse :)" />
+    <MESSAGE value="Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Utils/Atari_PPO_training/envs.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Utils/Atari_PPO_training/vec_env.py</url>
+          <line>56</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Utils/Atari_PPO_training/vec_env.py</url>
+          <line>66</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/show_rubik_env.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="dir(self.manager_proxies[0])" language="Python" />
