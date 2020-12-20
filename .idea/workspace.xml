@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d14602db-62e3-4c4b-95c8-aad4610ade93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/show_rubik_env.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/show_env.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Env/AtariEnv/AtariEnvWrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/AtariEnv/AtariEnvWrapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/WU_UCT.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/WU_UCT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,12 +40,13 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Tree" />
       <recent name="$PROJECT_DIR$/Node" />
       <recent name="$PROJECT_DIR$/Utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.show rubik env">
+  <component name="RunManager" selected="Python.main revAdd">
     <configuration name="Distillation" type="PythonConfigurationType" factoryName="Python">
       <module name="P-MCTS" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -113,6 +110,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main revAdd" type="PythonConfigurationType" factoryName="Python">
+      <module name="P-MCTS" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/.miniconda3/envs/MCTS/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="--model WU-UCT --env-name ReversedAddition-v0 --device cuda" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main rubik 2x2" type="PythonConfigurationType" factoryName="Python">
       <module name="P-MCTS" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -127,6 +145,27 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="--model WU-UCT --env-name rubiks-cube-222-v0 --record-video --device cuda" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="show env" type="PythonConfigurationType" factoryName="Python">
+      <module name="P-MCTS" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/.miniconda3/envs/MCTS/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/show_env.py" />
+      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -157,8 +196,10 @@
     </configuration>
     <list>
       <item itemvalue="Python.main pong" />
+      <item itemvalue="Python.main revAdd" />
       <item itemvalue="Python.main rubik 2x2" />
       <item itemvalue="Python.show rubik env" />
+      <item itemvalue="Python.show env" />
       <item itemvalue="Python.main atari" />
       <item itemvalue="Python.Distillation" />
     </list>
@@ -210,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608375615357</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Refactor">
+      <created>1608392201046</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1608392201046</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -249,9 +297,14 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/show_rubik_env.py</url>
-          <line>5</line>
-          <option name="timeStamp" value="10" />
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>59</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Env/EnvWrapper.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
