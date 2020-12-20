@@ -5,11 +5,8 @@ import time
 import logging
 
 from Node.WU_UCTnode import WU_UCTnode
-
-from Env.EnvWrapper import EnvWrapper
-
+from Env.AlgoritmicEnv.AlgoEnvWrapper import AlgoEnvWrapper
 from ParallelPool.PoolManager import PoolManager
-
 from Mem.CheckpointManager import CheckpointManager
 
 
@@ -30,8 +27,7 @@ class WU_UCT:
 
         # Environment
         record_path = "Records/P-UCT_" + env_params["env_name"] + ".mp4"
-        self.wrapped_env = EnvWrapper(**env_params, enable_record=record_video,
-                                      record_path=record_path)
+        self.wrapped_env = AlgoEnvWrapper(**env_params)
 
         # Environment properties
         self.action_n = self.wrapped_env.get_action_n()
@@ -83,7 +79,8 @@ class WU_UCT:
                                      str(self.simulation_worker_num) + ".log", level=logging.INFO)
 
     # Entrance of the P-UCT algorithm
-    # This is the outer loop of P-UCT simulation, where the P-UCT agent consecutively plan a best action and
+    # This is the outer loop of P-UCT simulation,
+    # where the P-UCT agent consecutively plan a best action and
     # interact with the environment.
     def simulate_trajectory(self, max_episode_length=-1):
         state = self.wrapped_env.reset()

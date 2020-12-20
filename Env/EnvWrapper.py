@@ -8,27 +8,26 @@ from Env.AtariEnv.AtariEnvWrapper import make_atari_env
 class EnvWrapper:
     def __init__(self, env_name, max_episode_length=0, enable_record=False, record_path="1.mp4"):
         self.env_name = env_name
-
         self.env_type = None
 
-        try:
-            self.env, self.recorder = make_atari_env(env_name, 0, 0, enable_record=enable_record,
-                                                     record_path=record_path)
+        # try:
+        #     self.env, self.recorder = make_atari_env(env_name, 0, 0, enable_record=enable_record,
+        #                                              record_path=record_path)
+        #
+        #     # Call reset to avoid gym bugs.
+        #     self.env.reset()
+        #
+        #     self.env_type = "Atari"
+        # except gym.error.Error:
+        #     exit(1)
+        #
+        # assert isinstance(self.env.action_space, gym.spaces.Discrete), "Should be discrete action space."
 
-            # Call reset to avoid gym bugs.
-            self.env.reset()
-
-            self.env_type = "Atari"
-        except gym.error.Error:
-            exit(1)
-
-        assert isinstance(self.env.action_space, gym.spaces.Discrete), "Should be discrete action space."
-        self.action_n = self.env.action_space.n
-
+        self.env = gym.make('ReversedAddition-v0', base=10)
+        self.env.reset()
+        self.action_n = self.env.action_space[0].n
         self.max_episode_length = self.env._max_episode_steps if max_episode_length == 0 else max_episode_length
-
         self.current_step_count = 0
-
         self.since_last_reset = 0
 
     def reset(self):

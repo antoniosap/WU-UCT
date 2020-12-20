@@ -5,7 +5,7 @@ from .VideoRecord import VideoRecorder
 from multiprocessing import Process, Pipe
 
 
-# cf https://github.com/openai/baselines
+# https://github.com/openai/baselines
 
 def make_atari_env(env_name, rank, seed, enable_record=False, record_path="./1.mp4"):
     env = make_atari(env_name)

@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d14602db-62e3-4c4b-95c8-aad4610ade93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/show_env.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Env/AlgoritmicEnv/AlgoEnvWrapper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Env/AlgoritmicEnv/__init__" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/1810.11755.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/P-MCTS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/P-MCTS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Env/AtariEnv/AtariEnvWrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/AtariEnv/AtariEnvWrapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Env/AtariEnv/atari_wrappers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/AtariEnv/atari_wrappers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Env/EnvWrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/EnvWrapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mem/CheckpointManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mem/CheckpointManager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/WU_UCT.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/WU_UCT.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/show_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/show_revadd.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,15 +47,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/show_env.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gym" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Env/algoritmicEnv" />
+      <recent name="$PROJECT_DIR$/docs" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Tree" />
       <recent name="$PROJECT_DIR$/Node" />
-      <recent name="$PROJECT_DIR$/Utils" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main revAdd">
@@ -152,7 +165,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="show env" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="show revadd" type="PythonConfigurationType" factoryName="Python">
       <module name="P-MCTS" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -164,7 +177,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/show_env.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/show_revadd.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -199,7 +212,7 @@
       <item itemvalue="Python.main revAdd" />
       <item itemvalue="Python.main rubik 2x2" />
       <item itemvalue="Python.show rubik env" />
-      <item itemvalue="Python.show env" />
+      <item itemvalue="Python.show revadd" />
       <item itemvalue="Python.main atari" />
       <item itemvalue="Python.Distillation" />
     </list>
@@ -258,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608392201046</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Refactor">
+      <created>1608452055759</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1608452055759</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -297,14 +317,19 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>59</line>
-          <option name="timeStamp" value="12" />
+          <url>file://$PROJECT_DIR$/Tree/WU_UCT.py</url>
+          <line>85</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Tree/WU_UCT.py</url>
+          <line>150</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Env/EnvWrapper.py</url>
-          <line>11</line>
-          <option name="timeStamp" value="13" />
+          <line>52</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

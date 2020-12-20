@@ -1,8 +1,11 @@
+#
 # This is the centralized game-state storage.
-class CheckpointManager():
+#
+
+class CheckpointManager:
+
     def __init__(self):
         self.buffer = dict()
-
         self.envs = dict()
 
     def hock_env(self, name, env):
