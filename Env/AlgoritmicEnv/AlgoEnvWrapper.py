@@ -40,7 +40,8 @@ class AlgoEnvWrapper:
         return next_state, reward, done
 
     def checkpoint(self):
-        return deepcopy(self.env.clone_full_state()), self.current_step_count
+        pass
+        # return deepcopy(self.env.clone_full_state()), self.current_step_count
 
     def restore(self, checkpoint):
         if self.since_last_reset > 20000:
@@ -88,8 +89,8 @@ class FrameStack(gym.Wrapper):
         gym.Wrapper.__init__(self, env)
         self.k = k
         self.frames = deque([], maxlen=k)
-        shp = env.observation_space.shape
-        self.observation_space = spaces.Box(low=0, high=255, shape=(shp[:-1] + (shp[-1] * k,)), dtype=env.observation_space.dtype)
+        # shp = env.observation_space.shape
+        # self.observation_space = spaces.Box(low=0, high=255, shape=(shp[:-1] + (shp[-1] * k,)), dtype=env.observation_space.dtype)
 
     def reset(self):
         ob = self.env.reset()
@@ -103,8 +104,9 @@ class FrameStack(gym.Wrapper):
         return self._get_ob(), reward, done, info
 
     def _get_ob(self):
-        assert len(self.frames) == self.k
-        return LazyFrames(list(self.frames))
+        pass
+        # assert len(self.frames) == self.k
+        # return LazyFrames(list(self.frames))
 
     def clone_full_state(self):
         state_data = self.unwrapped.clone_full_state()
@@ -121,5 +123,6 @@ class FrameStack(gym.Wrapper):
         self.frames = frame_data.copy()
 
     def get_state(self):
-        return self._get_ob()
+        pass
+        # return self._get_ob()
 
