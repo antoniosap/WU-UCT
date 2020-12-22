@@ -4,7 +4,6 @@
     <list default="true" id="d14602db-62e3-4c4b-95c8-aad4610ade93" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Env/AlgoritmicEnv/AlgoEnvWrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/AlgoritmicEnv/AlgoEnvWrapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Env/EnvWrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/EnvWrapper.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,13 +196,13 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.Distillation" />
+      <item itemvalue="Python.main atari" />
       <item itemvalue="Python.main pong" />
       <item itemvalue="Python.main revAdd" />
       <item itemvalue="Python.main rubik 2x2" />
-      <item itemvalue="Python.show rubik env" />
       <item itemvalue="Python.show revadd" />
-      <item itemvalue="Python.main atari" />
-      <item itemvalue="Python.Distillation" />
+      <item itemvalue="Python.show rubik env" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -274,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608494580869</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="recode for inverse addition">
+      <created>1608537981614</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1608537981614</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -292,7 +298,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refactor prior policy module to support easy reuse :)" />
     <MESSAGE value="Refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
+    <MESSAGE value="recode for inverse addition" />
+    <option name="LAST_COMMIT_MESSAGE" value="recode for inverse addition" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -313,24 +320,29 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Tree/WU_UCT.py</url>
-          <line>85</line>
-          <option name="timeStamp" value="22" />
+          <url>file://$PROJECT_DIR$/../gym/gym/envs/algorithmic/algorithmic_env.py</url>
+          <line>289</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Tree/WU_UCT.py</url>
-          <line>150</line>
-          <option name="timeStamp" value="24" />
+          <url>file://$PROJECT_DIR$/../gym/gym/envs/algorithmic/algorithmic_env.py</url>
+          <line>321</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Env/AlgoritmicEnv/AlgoEnvWrapper.py</url>
-          <line>16</line>
-          <option name="timeStamp" value="32" />
+          <line>21</line>
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Env/EnvWrapper.py</url>
-          <line>41</line>
-          <option name="timeStamp" value="33" />
+          <url>file://$PROJECT_DIR$/Env/AlgoritmicEnv/AlgoEnvWrapper.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../gym/gym/envs/algorithmic/algorithmic_env.py</url>
+          <line>162</line>
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
