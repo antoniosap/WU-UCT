@@ -3,7 +3,7 @@ from copy import deepcopy
 import random
 import numpy as np
 
-from Env.EnvWrapper import EnvWrapper
+from Env.AlgoritmicEnv.AlgoEnvWrapper import AlgoEnvWrapper
 
 from Policy.PPO.PPOPolicy import PPOAtariCNN, PPOSmallAtariCNN
 
@@ -32,7 +32,7 @@ class Worker(Process):
 
     # Initialize the environment
     def init_process(self):
-        self.wrapped_env = EnvWrapper(**self.env_params)
+        self.wrapped_env = AlgoEnvWrapper(**self.env_params)
 
         self.wrapped_env.seed(self.seed)
 

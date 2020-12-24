@@ -57,9 +57,9 @@ class EnvWrapper:
             self.reset()
             self.since_last_reset = 0
 
-        # self.env.restore_full_state(checkpoint[0])
-        # self.current_step_count = checkpoint[1]
-        # return self.env.get_state()
+        self.env.restore_full_state(checkpoint[0])
+        self.current_step_count = checkpoint[1]
+        return self.env.get_state()
 
     def render(self):
         self.env.render()

@@ -1,17 +1,16 @@
 #
 # 20.12.2020 - custom env wrapper for ReversedAddition test
 #
-from abc import ABC
 
 import gym
 from gym import spaces
 from copy import deepcopy
 from collections import deque
-from gym.envs.algorithmic.algorithmic_env import AlgorithmicEnv
+from gym.envs.algorithmic.algorithmic_env import GridAlgorithmicEnv
 
 
 # To allow easily extending to other tasks, we built a wrapper on top of the 'real' environment.
-class AlgoEnvWrapper(AlgorithmicEnv, ABC):
+class AlgoEnvWrapper:
     def __init__(self, env_name, base=10, max_episode_length=0):
         self.env_name = env_name
         self.env_type = None
@@ -19,7 +18,7 @@ class AlgoEnvWrapper(AlgorithmicEnv, ABC):
         self.env = gym.make('ReversedAddition-v0', base=self.env_base)
         self.env = FrameStack(self.env, 4)
         self.env.reset()
-        self.action_n = (self.env.action_space[0].n, self.env.action_space[1].n, self.env.action_space[2].n)
+        self.action_n = self.env.action_space[0].n
         self.max_episode_length = self.env._max_episode_steps if max_episode_length == 0 else max_episode_length
         self.current_step_count = 0
         self.since_last_reset = 0
@@ -48,6 +47,9 @@ class AlgoEnvWrapper(AlgorithmicEnv, ABC):
         # return deepcopy(self.env.clone_full_state()), self.current_step_count
 
     def restore(self, checkpoint):
+        if checkpoint is None:
+            return
+
         if self.since_last_reset > 20000:
             self.reset()
             self.since_last_reset = 0

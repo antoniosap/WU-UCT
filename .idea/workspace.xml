@@ -4,6 +4,11 @@
     <list default="true" id="d14602db-62e3-4c4b-95c8-aad4610ade93" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Env/AlgoritmicEnv/AlgoEnvWrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/AlgoritmicEnv/AlgoEnvWrapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Env/EnvWrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/EnvWrapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Node/WU_UCTnode.py" beforeDir="false" afterPath="$PROJECT_DIR$/Node/WU_UCTnode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParallelPool/Worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelPool/Worker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/WU_UCT.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/WU_UCT.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gym/gym/envs/algorithmic/algorithmic_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/../gym/gym/envs/algorithmic/algorithmic_env.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +23,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../gym" />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1440" />
@@ -280,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608537981614</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="recode for inverse addition">
+      <created>1608624788314</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1608624788315</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -321,28 +333,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../gym/gym/envs/algorithmic/algorithmic_env.py</url>
-          <line>289</line>
+          <line>291</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../gym/gym/envs/algorithmic/algorithmic_env.py</url>
-          <line>321</line>
+          <line>323</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Env/AlgoritmicEnv/AlgoEnvWrapper.py</url>
-          <line>21</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Env/AlgoritmicEnv/AlgoEnvWrapper.py</url>
-          <line>35</line>
+          <line>34</line>
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../gym/gym/envs/algorithmic/algorithmic_env.py</url>
-          <line>162</line>
-          <option name="timeStamp" value="52" />
+          <url>file://$PROJECT_DIR$/Node/WU_UCTnode.py</url>
+          <line>139</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Node/WU_UCTnode.py</url>
+          <line>133</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Env/AlgoritmicEnv/AlgoEnvWrapper.py</url>
+          <line>52</line>
+          <option name="timeStamp" value="58" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

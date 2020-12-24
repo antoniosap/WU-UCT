@@ -140,14 +140,14 @@ class WU_UCTnode():
                 action = np.random.randint(0, self.action_n)
 
             if count > 100:
-                return action
+                return (action, 0, 0)
 
             if self.children_visit_count[action] > 0 and count < 10:
                 count += 1
                 continue
 
             if self.children[action] is None:
-                return action
+                return (action, 0, 0)
 
             count += 1
 
@@ -162,11 +162,12 @@ class WU_UCTnode():
     # Incomplete update, called by WU_UCT.py
     def update_incomplete(self, idx):
         action_taken = self.traverse_history[idx][0]
-
-        if self.children_visit_count[action_taken] == 0:
+        expand_action_0_axis = action_taken[0]
+        print(f"DEBUG_PT_001 {__name__} update_incomplete {action_taken} {expand_action_0_axis}")
+        if self.children_visit_count[expand_action_0_axis] == 0:
             self.visited_node_count += 1
 
-        self.children_visit_count[action_taken] += 1
+        self.children_visit_count[expand_action_0_axis] += 1
         self.visit_count += 1
 
     # Complete update, called by WU_UCT.py
