@@ -305,14 +305,15 @@ class WU_UCT:
 
             checkpoint_data = self.checkpoint_data_manager.retrieve(self.simulation_task_recorder[task_idx][2])
 
-            first_aciton = None if self.simulation_task_recorder[task_idx][3] \
+            first_action = None if self.simulation_task_recorder[task_idx][3] \
                                    is not None else self.simulation_task_recorder[task_idx][0]
 
             # Assign the task to server
+            print(f"DEBUG_PT_005 assign_simulation_task first_action={first_action}")
             self.simulation_worker_pool.assign_simulation_task(
                 task_idx,
                 checkpoint_data,
-                first_action=first_aciton
+                first_action=first_action
             )
 
             # Perform incomplete update

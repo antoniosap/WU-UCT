@@ -57,6 +57,7 @@ class Worker(Process):
         while True:
             # Wait for tasks
             command, args = self.receive_safe_protocol()
+            print(f"DEBUG_PT_004 worker command={command} args={args}")
 
             if command == "KillProc":
                 return
@@ -76,6 +77,7 @@ class Worker(Process):
                     raise RuntimeError
                 else:
                     task_idx, checkpoint_data, first_action = args
+                    print(f"DEBUG_PT_006 worker first_action={first_action}")
 
                     state = self.wrapped_env.restore(checkpoint_data)
 

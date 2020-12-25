@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d14602db-62e3-4c4b-95c8-aad4610ade93" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Env/AlgoritmicEnv/AlgoEnvWrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/AlgoritmicEnv/AlgoEnvWrapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Env/EnvWrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/EnvWrapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Node/WU_UCTnode.py" beforeDir="false" afterPath="$PROJECT_DIR$/Node/WU_UCTnode.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ParallelPool/Worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelPool/Worker.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tree/WU_UCT.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/WU_UCT.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gym/gym/envs/algorithmic/algorithmic_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/../gym/gym/envs/algorithmic/algorithmic_env.py" afterDir="false" />
@@ -23,7 +20,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../gym" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1440" />
@@ -292,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608624788315</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="recode for inverse addition">
+      <created>1608808553126</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1608808553126</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -333,12 +337,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../gym/gym/envs/algorithmic/algorithmic_env.py</url>
-          <line>291</line>
+          <line>290</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../gym/gym/envs/algorithmic/algorithmic_env.py</url>
-          <line>323</line>
+          <line>322</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -360,6 +364,11 @@
           <url>file://$PROJECT_DIR$/Env/AlgoritmicEnv/AlgoEnvWrapper.py</url>
           <line>52</line>
           <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Tree/WU_UCT.py</url>
+          <line>312</line>
+          <option name="timeStamp" value="65" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
