@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d14602db-62e3-4c4b-95c8-aad4610ade93" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/show_lunarlander.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Env/AlgoritmicEnv/AlgoEnvWrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/LunarLanderEnv/LunarLanderEnvWrapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Env/AlgoritmicEnv/__init__" beforeDir="false" afterPath="$PROJECT_DIR$/Env/LunarLanderEnv/__init__" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ParallelPool/Worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelPool/Worker.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tree/WU_UCT.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/WU_UCT.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gym/gym/envs/algorithmic/algorithmic_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/../gym/gym/envs/algorithmic/algorithmic_env.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,19 +41,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gym" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/show_lunarlander.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Env/algoritmicEnv" />
       <recent name="$PROJECT_DIR$/docs" />
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Tree" />
       <recent name="$PROJECT_DIR$/Node" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main revAdd">
+  <component name="RunManager" selected="Python.main LunarLander">
     <configuration name="Distillation" type="PythonConfigurationType" factoryName="Python">
       <module name="P-MCTS" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -64,6 +68,27 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Utils/NetworkDistillation/Distillation.py" />
       <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main LunarLander" type="PythonConfigurationType" factoryName="Python">
+      <module name="P-MCTS" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/.miniconda3/envs/MCTS/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="--model WU-UCT --env-name LunarLander-v2 --device cuda" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -113,27 +138,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main revAdd" type="PythonConfigurationType" factoryName="Python">
-      <module name="P-MCTS" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/.miniconda3/envs/MCTS/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="--model WU-UCT --env-name ReversedAddition-v0 --device cuda" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="main rubik 2x2" type="PythonConfigurationType" factoryName="Python">
       <module name="P-MCTS" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -148,6 +152,27 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="--model WU-UCT --env-name rubiks-cube-222-v0 --record-video --device cuda" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="show lunar lander" type="PythonConfigurationType" factoryName="Python">
+      <module name="P-MCTS" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/.miniconda3/envs/MCTS/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/show_lunarlander.py" />
+      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -201,9 +226,10 @@
       <item itemvalue="Python.Distillation" />
       <item itemvalue="Python.main atari" />
       <item itemvalue="Python.main pong" />
-      <item itemvalue="Python.main revAdd" />
+      <item itemvalue="Python.main LunarLander" />
       <item itemvalue="Python.main rubik 2x2" />
       <item itemvalue="Python.show revadd" />
+      <item itemvalue="Python.show lunar lander" />
       <item itemvalue="Python.show rubik env" />
     </list>
   </component>
@@ -296,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608808553126</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="recode for inverse addition">
+      <created>1608890885090</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1608890885090</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -346,7 +379,7 @@
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Env/AlgoritmicEnv/AlgoEnvWrapper.py</url>
+          <url>file://$PROJECT_DIR$/Env/LunarLanderEnv/LunarLanderEnvWrapper.py</url>
           <line>34</line>
           <option name="timeStamp" value="50" />
         </line-breakpoint>
@@ -361,14 +394,19 @@
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Env/AlgoritmicEnv/AlgoEnvWrapper.py</url>
+          <url>file://$PROJECT_DIR$/Env/LunarLanderEnv/LunarLanderEnvWrapper.py</url>
           <line>52</line>
           <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Tree/WU_UCT.py</url>
-          <line>312</line>
+          <line>313</line>
           <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/show_lunarlander.py</url>
+          <line>9</line>
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

@@ -15,3 +15,5 @@ opencv
 matplotlib
 # per i puzzle pip
 rubiks-cube-gym
+# per il lunar lander
+Box2D

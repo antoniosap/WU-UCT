@@ -6,19 +6,17 @@ import gym
 from gym import spaces
 from copy import deepcopy
 from collections import deque
-from gym.envs.algorithmic.algorithmic_env import GridAlgorithmicEnv
 
 
 # To allow easily extending to other tasks, we built a wrapper on top of the 'real' environment.
-class AlgoEnvWrapper:
-    def __init__(self, env_name, base=10, max_episode_length=0):
+class LunarLanderEnvWrapper:
+    def __init__(self, env_name, max_episode_length=0):
         self.env_name = env_name
         self.env_type = None
-        self.env_base = base
-        self.env = gym.make('ReversedAddition-v0', base=self.env_base)
+        self.env = gym.make('LunarLander-v2')
         self.env = FrameStack(self.env, 4)
         self.env.reset()
-        self.action_n = self.env.action_space[0].n
+        self.action_n = self.env.action_space.n
         self.max_episode_length = self.env._max_episode_steps if max_episode_length == 0 else max_episode_length
         self.current_step_count = 0
         self.since_last_reset = 0

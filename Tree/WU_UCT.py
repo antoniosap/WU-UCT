@@ -5,7 +5,7 @@ import time
 import logging
 
 from Node.WU_UCTnode import WU_UCTnode
-from Env.AlgoritmicEnv.AlgoEnvWrapper import AlgoEnvWrapper
+from Env.LunarLanderEnv.LunarLanderEnvWrapper import LunarLanderEnvWrapper
 from ParallelPool.PoolManager import PoolManager
 from Mem.CheckpointManager import CheckpointManager
 
@@ -27,7 +27,7 @@ class WU_UCT:
 
         # Environment
         record_path = "Records/P-UCT_" + env_params["env_name"] + ".mp4"
-        self.wrapped_env = AlgoEnvWrapper(**env_params)
+        self.wrapped_env = LunarLanderEnvWrapper(**env_params)
 
         # Environment properties
         self.action_n = self.wrapped_env.get_action_n()
@@ -305,6 +305,7 @@ class WU_UCT:
 
             checkpoint_data = self.checkpoint_data_manager.retrieve(self.simulation_task_recorder[task_idx][2])
 
+            print(f"DEBUG_PT_007 simulation_task_recorder={self.simulation_task_recorder}")
             first_action = None if self.simulation_task_recorder[task_idx][3] \
                                    is not None else self.simulation_task_recorder[task_idx][0]
 

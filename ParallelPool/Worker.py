@@ -3,10 +3,8 @@ from copy import deepcopy
 import random
 import numpy as np
 
-from Env.AlgoritmicEnv.AlgoEnvWrapper import AlgoEnvWrapper
-
+from Env.LunarLanderEnv.LunarLanderEnvWrapper import LunarLanderEnvWrapper
 from Policy.PPO.PPOPolicy import PPOAtariCNN, PPOSmallAtariCNN
-
 from Policy.PolicyWrapper import PolicyWrapper
 
 
@@ -32,7 +30,7 @@ class Worker(Process):
 
     # Initialize the environment
     def init_process(self):
-        self.wrapped_env = AlgoEnvWrapper(**self.env_params)
+        self.wrapped_env = LunarLanderEnvWrapper(**self.env_params)
 
         self.wrapped_env.seed(self.seed)
 
@@ -77,7 +75,7 @@ class Worker(Process):
                     raise RuntimeError
                 else:
                     task_idx, checkpoint_data, first_action = args
-                    print(f"DEBUG_PT_006 worker first_action={first_action}")
+                    print(f"DEBUG_PT_006 worker args={args}")
 
                     state = self.wrapped_env.restore(checkpoint_data)
 
