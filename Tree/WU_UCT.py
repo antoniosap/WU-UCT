@@ -270,10 +270,9 @@ class WU_UCT:
                 curr_node.update_history(task_idx, expand_action, reward)
 
                 # Record info
-                expand_action_0_axis = expand_action[0]
-                print(f"DEBUG_PT_000 {__name__} simulate_single_step {expand_action} {expand_action_0_axis}")
-                curr_node.dones[expand_action_0_axis] = done
-                curr_node.rewards[expand_action_0_axis] = reward
+                print(f"DEBUG_PT_000 {__name__} simulate_single_step {expand_action}")
+                curr_node.dones[expand_action] = done
+                curr_node.rewards[expand_action] = reward
 
                 if done:
                     # If this expansion result in a terminal node, perform update directly.
@@ -290,7 +289,7 @@ class WU_UCT:
                     self.checkpoint_data_manager.store(saving_idx, checkpoint_data)
 
                     self.simulation_task_recorder[task_idx] = (
-                        expand_action_0_axis,
+                        expand_action,
                         curr_node,
                         saving_idx,
                         deepcopy(next_state)

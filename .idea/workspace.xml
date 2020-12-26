@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d14602db-62e3-4c4b-95c8-aad4610ade93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/show_lunarlander.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Env/AlgoritmicEnv/AlgoEnvWrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Env/LunarLanderEnv/LunarLanderEnvWrapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Env/AlgoritmicEnv/__init__" beforeDir="false" afterPath="$PROJECT_DIR$/Env/LunarLanderEnv/__init__" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ParallelPool/Worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParallelPool/Worker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Node/WU_UCTnode.py" beforeDir="false" afterPath="$PROJECT_DIR$/Node/WU_UCTnode.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tree/WU_UCT.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/WU_UCT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gym/gym/envs/algorithmic/algorithmic_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/../gym/gym/envs/algorithmic/algorithmic_env.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -329,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608890885090</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="recode for lunar lander.&#10;this not have sub-actions.">
+      <created>1608926884559</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1608926884559</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -348,7 +351,8 @@
     <MESSAGE value="Refactor prior policy module to support easy reuse :)" />
     <MESSAGE value="Refactor" />
     <MESSAGE value="recode for inverse addition" />
-    <option name="LAST_COMMIT_MESSAGE" value="recode for inverse addition" />
+    <MESSAGE value="recode for lunar lander.&#10;this not have sub-actions." />
+    <option name="LAST_COMMIT_MESSAGE" value="recode for lunar lander.&#10;this not have sub-actions." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -384,29 +388,24 @@
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Node/WU_UCTnode.py</url>
-          <line>139</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Node/WU_UCTnode.py</url>
-          <line>133</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Env/LunarLanderEnv/LunarLanderEnvWrapper.py</url>
           <line>52</line>
           <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Tree/WU_UCT.py</url>
-          <line>313</line>
+          <line>312</line>
           <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/show_lunarlander.py</url>
-          <line>9</line>
-          <option name="timeStamp" value="66" />
+          <url>file://$PROJECT_DIR$/../gym/gym/envs/box2d/lunar_lander.py</url>
+          <line>101</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Env/LunarLanderEnv/LunarLanderEnvWrapper.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="68" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
